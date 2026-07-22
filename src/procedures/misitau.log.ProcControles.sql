@@ -27,7 +27,7 @@ Begin
 	If @TipoLog = 'Execucao'
 	Begin
 
-		Insert into [log].ControleExecucoes (NomeProcedure, DataHoraInicio, StatusExecucao)
+		Insert into misitau.[log].ControleExecucoes (NomeProcedure, DataHoraInicio, StatusExecucao)
 		Values (
 			@NomeProcedure,
 			@DataHoraInicio,
@@ -40,7 +40,7 @@ Begin
 	/* Captura volumetria de tabelas */
 	If @TipoLog = 'Volumetria'
 	Begin
-		Insert into [log].ControleVolumes (IdExecucao, NomeTabelaOrigem, NomeTabelaDestino, LinhasOrigem, LinhasInseridas, LinhasAtualizadas, LinhasTotaisDestino, DataExecucao)
+		Insert into misitau.[log].ControleVolumes (IdExecucao, NomeTabelaOrigem, NomeTabelaDestino, LinhasOrigem, LinhasInseridas, LinhasAtualizadas, LinhasTotaisDestino, DataExecucao)
 		Values (
 			@IdExecucao,
 			@NomeTabelaOrigem,
@@ -56,7 +56,7 @@ Begin
 	/* Captura erros de execuções */
 	If @TipoLog = 'Erro'
 	Begin
-		Insert into [log].ControleErros (IdExecucao, NomeProcedure, DataErro, MensagemErro, NumeroErro, LinhaErro, EtapaErro)
+		Insert into misitau.[log].ControleErros (IdExecucao, NomeProcedure, DataErro, MensagemErro, NumeroErro, LinhaErro, EtapaErro)
 		Values (
 			@IdExecucao,
 			@NomeProcedure,
@@ -76,7 +76,7 @@ Begin
 		Set DataHoraFim = @DataHoraFim,
 			StatusExecucao = @StatusExecucao,
 			TempoExecucaoSegundos = Datediff(Second, DataHoraInicio, @DataHoraFim)
-		From [log].ControleExecucoes a
+		From misitau.[log].ControleExecucoes a
 		Where
 			IdExecucao = @IdExecucao;
 
@@ -86,7 +86,7 @@ Begin
 	If @TipoLog = 'Expurgo'
 	Begin 
 		
-		Insert into log.ControleExpurgo (IdTabelaExpurgo, NomeTabela, DataExecucao)
+		Insert into misitau.log.ControleExpurgo (IdTabelaExpurgo, NomeTabela, DataExecucao)
 		Values (
 			@IdTabelaExpurgo,
 			@NomeTabela,
