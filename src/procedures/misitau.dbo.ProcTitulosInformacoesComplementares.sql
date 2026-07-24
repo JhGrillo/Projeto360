@@ -350,7 +350,7 @@ Where
 						a.IdTituloInformacaoComplementar = b.IdTituloInformacaoComplementar
 						and Isnull(a.DataAtualizacao,'1900-01-01') = Isnull(b.DataAtualizacao,'1900-01-01'));
 
---Set @LinhasOrigem = @@RowCount;
+Set @LinhasOrigem = @@RowCount;
 
 ------------------------------> Criacao de índices
 
