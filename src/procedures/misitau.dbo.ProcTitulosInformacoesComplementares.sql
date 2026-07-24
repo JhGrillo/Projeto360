@@ -4,7 +4,7 @@ Create or Alter Procedure dbo.ProcTitulosInformacoesComplementares as
 
 /*
 	Padrão de escrita: PascalCase
-	Nome: ProcDevedores
+	Nome: ProcTitulosInformacoesComplementares
 	DataCriação: 23/07/2026
 	Criado por: Leonardo Matheus Talarico
 	DataAtualização:
@@ -350,7 +350,7 @@ Where
 						a.IdTituloInformacaoComplementar = b.IdTituloInformacaoComplementar
 						and Isnull(a.DataAtualizacao,'1900-01-01') = Isnull(b.DataAtualizacao,'1900-01-01'));
 
---Set @LinhasOrigem = @@RowCount;
+Set @LinhasOrigem = @@RowCount;
 
 ------------------------------> Criacao de índices
 
