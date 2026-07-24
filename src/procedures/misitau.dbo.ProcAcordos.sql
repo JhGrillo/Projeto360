@@ -15,7 +15,7 @@ Create or Alter Procedure dbo.ProcAcordos as
 
 ------------------------------> Definições de variaveis e controles de ambiente
 
---Set Nocount On;
+Set Nocount On;
 
 Declare @NomeProcedure varchar(128) = 'ProcAcordos',
         @Etapa varchar(100) = 'Inicio',
